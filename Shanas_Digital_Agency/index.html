@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanas Digital Agency | ₹5,000 Business Website + Google Maps Setup | Trichy</title>
-    <meta name="description" content="Get your business online with a professional website + Google Maps listing for just ₹5,000. Based in Trichy, helping local businesses grow digitally.">
+    <meta name="description" content="Get your business online with a professional website + Google Maps listing for just ₹5,000. Based in Trichy, helping businesses grow digitally.">
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="website design Trichy, business website Trichy, Google Business Profile setup, web design Tamil Nadu, affordable website design, website for small business, digital marketing Trichy, website development Trichy, online presence, local business website">
+    <meta name="keywords" content="website design Trichy, business website Trichy, Google Business Profile setup, web design Tamil Nadu, affordable website design, website for small business, digital marketing Trichy, website development Trichy, online presence, business website">
     <meta name="author" content="Shanas Digital Agency">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://shanasdigital.netlify.app/">
@@ -16,14 +16,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shanasdigital.netlify.app/">
     <meta property="og:title" content="Shanas Digital Agency - ₹5,000 Business Website + Google Maps Setup">
-    <meta property="og:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for local businesses in Trichy. No hidden costs.">
+    <meta property="og:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy. No hidden costs.">
     <meta property="og:image" content="https://shanasdigital.netlify.app/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://shanasdigital.netlify.app/">
     <meta property="twitter:title" content="Shanas Digital Agency - ₹5,000 Business Website + Google Maps Setup">
-    <meta property="twitter:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for local businesses in Trichy.">
+    <meta property="twitter:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy.">
     <meta property="twitter:image" content="https://shanasdigital.netlify.app/og-image.jpg">
     
     <!-- Local Business Schema -->
@@ -33,7 +33,7 @@
       "@type": "ProfessionalService",
       "name": "Shanas Digital Agency",
       "image": "https://shanasdigital.netlify.app/logo.png",
-      "description": "Professional website design and Google Business Profile setup services for local businesses in Trichy. Affordable packages starting at ₹5,000.",
+      "description": "Professional website design and Google Business Profile setup services for businesses in Trichy. Affordable packages starting at ₹5,000.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Trichy",
@@ -1204,6 +1204,154 @@
                 width: auto;
             }
         }
+        .form-divider {
+            text-align: center;
+            margin: 35px 0;
+            position: relative;
+        }
+
+        .form-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 20%, 
+                rgba(255, 255, 255, 0.3) 80%, 
+                transparent 100%);
+        }
+
+        .form-divider span {
+            background: var(--dark);
+            padding: 0 20px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 2px;
+        }
+
+        .google-form-section {
+            text-align: center;
+            padding: 30px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            margin-top: 25px;
+        }
+
+        .google-form-section:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .google-form-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.75rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .google-form-section:hover .google-form-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .google-form-section h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .google-form-section p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.938rem;
+            line-height: 1.5;
+        }
+
+        .google-form-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .google-form-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .google-form-btn:hover::before {
+            left: 100%;
+        }
+
+        .google-form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.5);
+            background: linear-gradient(135deg, #357ae8, #2d8f47);
+        }
+
+        .google-form-btn i {
+            font-size: 0.875rem;
+            transition: transform 0.3s ease;
+        }
+
+        .google-form-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Mobile responsiveness for Google Form section */
+        @media (max-width: 768px) {
+            .google-form-section {
+                padding: 25px 20px;
+            }
+            
+            .google-form-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .google-form-section h4 {
+                font-size: 1.125rem;
+            }
+            
+            .google-form-btn {
+                padding: 12px 28px;
+                font-size: 0.938rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1234,7 +1382,7 @@
                     Get Your Business <span class="highlight">Online</span> in Just ½ Day
                 </h1>
                 <p>
-                    Professional website + Google Business Profile setup for local businesses. 
+                    Professional website + Google Business Profile setup for businesses. 
                     No hidden costs. No technical hassle. Just results.
                 </p>
                 <div class="hero-cta">
@@ -1388,7 +1536,7 @@
         <div class="portfolio-container">
             <div class="section-header">
                 <h2 id="portfolio-heading">Recent Work</h2>
-                <p>See how we've helped local businesses establish their digital presence</p>
+                <p>See how we've helped businesses establish their digital presence</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-card">
@@ -1422,7 +1570,7 @@
                             <span class="portfolio-tag">Custom Design</span>
                         </div>
                         <h3>Ready to Showcase Your Business?</h3>
-                        <p>Join the growing list of local businesses we've helped establish a strong digital presence and attract more customers online.</p>
+                        <p>Join the growing list of businesses we've helped establish a strong digital presence and attract more customers online.</p>
                         <a href="#contact" class="portfolio-link">
                             Get Started Today
                         </a>
@@ -1537,8 +1685,26 @@
                         <label>Message</label>
                         <textarea name="message" placeholder="Any specific requirements or questions?"></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Enquiry
+                    </button>
                 </form>
+                
+                <div class="form-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="google-form-section">
+                    <div class="google-form-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h4>Prefer Google Forms?</h4>
+                    <p>Fill out our detailed questionnaire to help us understand your business better</p>
+                    <a href="https://forms.gle/soKikbMTNjvWGocj8" target="_blank" rel="noopener" class="google-form-btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open Google Form
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1547,7 +1713,7 @@
     <!-- Footer -->
     <footer role="contentinfo">
         <p><strong>Shanas Digital Agency</strong></p>
-        <p>Helping local businesses in Trichy establish their digital presence</p>
+        <p>Helping  businesses in Trichy establish their digital presence</p>
         <p>© 2025 Shanas Digital Agency. All rights reserved.</p>
     </footer>
 
@@ -1629,11 +1795,11 @@
                 // Create WhatsApp message
                 var message = `New Website Enquiry!
 
-Name: ${formData.name}
-Business: ${formData.business}
-Phone: ${formData.phone}
-Type: ${formData.type || 'Not specified'}
-Message: ${formData.message || 'No message'}`;
+                    Name: ${formData.name}
+                    Business: ${formData.business}
+                    Phone: ${formData.phone}
+                    Type: ${formData.type || 'Not specified'}
+                    Message: ${formData.message || 'No message'}`;
 
                 // Show success notification
                 toastr.success('Redirecting to WhatsApp...', 'Enquiry Sent!', {
