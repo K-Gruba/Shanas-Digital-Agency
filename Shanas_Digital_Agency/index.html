@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shanas Digital Agency | ₹5,000 Business Website + Google Maps Setup | Trichy</title>
-    <meta name="description" content="Get your business online with a professional website + Google Maps listing for just ₹5,000. Based in Trichy, helping businesses grow digitally.">
-    
+    <meta name="description"
+        content="Get your business online with a professional website + Google Maps listing for just ₹5,000. Based in Trichy, helping businesses grow digitally.">
+
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="website design Trichy, business website Trichy, Google Business Profile setup, web design Tamil Nadu, affordable website design, website for small business, digital marketing Trichy, website development Trichy, online presence, business website">
+    <meta name="keywords"
+        content="website design Trichy, business website Trichy, Google Business Profile setup, web design Tamil Nadu, affordable website design, website for small business, digital marketing Trichy, website development Trichy, online presence, business website">
     <meta name="author" content="Shanas Digital Agency">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://shanasdigital.netlify.app/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shanasdigital.netlify.app/">
     <meta property="og:title" content="Shanas Digital Agency - ₹5,000 Business Website + Google Maps Setup">
-    <meta property="og:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy. No hidden costs.">
+    <meta property="og:description"
+        content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy. No hidden costs.">
     <meta property="og:image" content="https://shanasdigital.netlify.app/og-image.jpg">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://shanasdigital.netlify.app/">
     <meta property="twitter:title" content="Shanas Digital Agency - ₹5,000 Business Website + Google Maps Setup">
-    <meta property="twitter:description" content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy.">
+    <meta property="twitter:description"
+        content="Get your business online in just ½ day. Professional website + Google Business Profile for businesses in Trichy.">
     <meta property="twitter:image" content="https://shanasdigital.netlify.app/og-image.jpg">
-    
+
     <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
@@ -90,7 +95,7 @@
       }
     }
     </script>
-    
+
     <!-- Service Schema -->
     <script type="application/ld+json">
     {
@@ -136,14 +141,16 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Clash+Display:wght@600;700&family=General+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aladin&family=Clash+Display:wght@600;700&family=General+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Toastr CSS for modern notifications -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    
+
     <!-- Font Awesome for better icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -152,15 +159,21 @@
         }
 
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85A28;
-            --secondary: #004E89;
-            --accent: #F7B801;
-            --dark: #1A1A2E;
-            --light: #F5F5F5;
+            /* Modern Palette */
+            --primary: #FF5A1F;
+            /* Vibrant Orange for Action */
+            --primary-dark: #E04810;
+            --secondary: #0A2647;
+            /* Deep Royal Blue for Trust */
+            --secondary-light: #144272;
+            --accent: #FFC93C;
+            /* Warm Yellow for Highlights */
+            --dark: #0B1120;
+            --light: #F8FAFC;
             --white: #FFFFFF;
-            --text: #2D3142;
-            --text-light: #6B7280;
+            --text: #334155;
+            --text-light: #64748B;
+            --gradient-main: linear-gradient(135deg, #0A2647 0%, #06182E 100%);
         }
 
         body {
@@ -176,7 +189,9 @@
            - Clash Display: Headings (bold, modern)
            - General Sans: Body text (clean, readable)
         */
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'Clash Display', sans-serif;
             font-weight: 700;
             line-height: 1.2;
@@ -198,6 +213,7 @@
             from {
                 transform: translateY(-100%);
             }
+
             to {
                 transform: translateY(0);
             }
@@ -262,10 +278,338 @@
             box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
         }
 
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 5rem 2rem;
+                gap: 1.5rem;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+        }
+
+        /* Digital Bundle 3D Visual */
+        .digital-bundle-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+            margin-top: 2rem;
+        }
+
+        .laptop-base {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateY(-10deg);
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .laptop-base:hover {
+            transform: translate(-50%, -55%) rotateY(0deg);
+        }
+
+        .laptop-screen {
+            background: #f8fafc;
+            height: 320px;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            padding: 1rem;
+            position: relative;
+            border: 8px solid #333;
+            border-bottom: 25px solid #333;
+        }
+
+        .screen-header {
+            height: 15px;
+            background: #e2e8f0;
+            margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-left: 8px;
+        }
+
+        .screen-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #cbd5e1;
+        }
+
+        .screen-dot.red {
+            background: #ef4444;
+        }
+
+        .screen-dot.yellow {
+            background: #eab308;
+        }
+
+        .screen-dot.green {
+            background: #22c55e;
+        }
+
+        /* Skeleton Website UI */
+        .sk-hero {
+            height: 140px;
+            background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+            border-radius: 4px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sk-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shine 2s infinite;
+        }
+
+        .sk-nav {
+            height: 15px;
+            background: #f1f5f9;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            width: 60%;
+        }
+
+        .sk-grid {
+            display: flex;
+            gap: 8px;
+        }
+
+        .sk-col {
+            flex: 1;
+            height: 80px;
+            background: #e2e8f0;
+            border-radius: 4px;
+        }
+
+        @keyframes shine {
+            to {
+                left: 150%;
+            }
+        }
+
+        /* Google Business Card Overlay */
+        .google-card {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            width: 260px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            animation: floatingCard 4s ease-in-out infinite;
+        }
+
+        @keyframes floatingCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .g-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .g-stars {
+            color: #fbbf24;
+            font-size: 0.8rem;
+            display: flex;
+            gap: 2px;
+        }
+
+        .g-avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .g-title {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 2px;
+            font-size: 1rem;
+        }
+
+        .g-subtitle {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .g-stats {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 0.75rem;
+            color: #4b5563;
+        }
+
+        .g-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .g-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .g-btn {
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #1a73e8;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .g-btn:hover {
+            background: #f0fdf4;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        /* Floating Badge Icons */
+        .float-icon {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .icon-1 {
+            top: -10px;
+            left: -10px;
+            animation: floatIcon 3s infinite alternate;
+        }
+
+        .icon-2 {
+            bottom: 40px;
+            left: -30px;
+            animation: floatIcon 4s infinite alternate-reverse;
+        }
+
+        @keyframes floatIcon {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .digital-bundle-wrapper {
+                height: 320px;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .laptop-base {
+                width: 100%;
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none !important;
+                max-width: 100%;
+            }
+
+            .google-card {
+                right: 0;
+                bottom: -40px;
+                width: 90%;
+                left: 5%;
+                animation: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .float-icon {
+                display: none;
+            }
+        }
+
         /* Hero Section */
         .hero {
             padding: 120px 2rem 80px;
-            background: linear-gradient(135deg, #004E89 0%, #002D54 100%);
+            background: linear-gradient(135deg, #520e5e 0%, #002D54 100%);
             position: relative;
             overflow: hidden;
         }
@@ -326,6 +670,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -351,8 +696,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .mockup-container {
@@ -387,8 +737,13 @@
             background: #FF5F57;
         }
 
-        .browser-dot:nth-child(2) { background: #FFBD2E; }
-        .browser-dot:nth-child(3) { background: #28CA42; }
+        .browser-dot:nth-child(2) {
+            background: #FFBD2E;
+        }
+
+        .browser-dot:nth-child(3) {
+            background: #28CA42;
+        }
 
         .browser-content {
             padding: 2rem;
@@ -696,7 +1051,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
             opacity: 0.4;
             transition: opacity 0.4s;
             z-index: 1;
@@ -1023,11 +1378,14 @@
         }
 
         @keyframes pulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             }
-            50% { 
+
+            50% {
                 transform: scale(1.05);
                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
             }
@@ -1054,6 +1412,7 @@
                 transform: scale(1);
                 opacity: 0.3;
             }
+
             100% {
                 transform: scale(1.5);
                 opacity: 0;
@@ -1103,6 +1462,7 @@
                 opacity: 0;
                 right: 60px;
             }
+
             to {
                 opacity: 1;
                 right: 70px;
@@ -1173,7 +1533,7 @@
             font-family: 'General Sans', sans-serif !important;
         }
 
-        #toast-container > div {
+        #toast-container>div {
             opacity: 0.95;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
             border-radius: 12px;
@@ -1204,6 +1564,7 @@
                 width: auto;
             }
         }
+
         .form-divider {
             text-align: center;
             margin: 35px 0;
@@ -1217,11 +1578,11 @@
             top: 50%;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.3) 20%, 
-                rgba(255, 255, 255, 0.3) 80%, 
-                transparent 100%);
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.3) 20%,
+                    rgba(255, 255, 255, 0.3) 80%,
+                    transparent 100%);
         }
 
         .form-divider span {
@@ -1336,437 +1697,1846 @@
             .google-form-section {
                 padding: 25px 20px;
             }
-            
+
             .google-form-icon {
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
             }
-            
+
             .google-form-section h4 {
                 font-size: 1.125rem;
             }
-            
+
             .google-form-btn {
                 padding: 12px 28px;
                 font-size: 0.938rem;
             }
         }
+
+        /* --- NEW SECTIONS STYLING --- */
+
+        /* 1. Google Search Simulator */
+        .search-sim-section {
+            padding: 80px 2rem;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #dfe1e5;
+        }
+
+        .search-bar {
+            padding: 20px;
+            border-bottom: 1px solid #dfe1e5;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-input-mock {
+            flex-grow: 1;
+            height: 44px;
+            background: #fff;
+            border-radius: 24px;
+            border: 1px solid #dfe1e5;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: #5f6368;
+            font-size: 16px;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
+        }
+
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .search-results-area {
+            padding: 30px;
+            text-align: left;
+            background: #fff;
+        }
+
+        .map-pack-mock {
+            border: 1px solid #dfe1e5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .map-header {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #202124;
+            border-bottom: 1px solid #dfe1e5;
+        }
+
+        .business-list-item {
+            padding: 15px;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .my-business-highlight {
+            background: #f0fdf4;
+            position: relative;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid #22c55e;
+            z-index: 10;
+        }
+
+        .biz-name {
+            font-weight: 700;
+            color: #1a0dab;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .biz-rating {
+            color: #e7711b;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .biz-meta {
+            color: #5f6368;
+            font-size: 14px;
+        }
+
+        .call-btn-mock {
+            background: #f1f3f4;
+            color: #1a73e8;
+            padding: 8px 16px;
+            border-radius: 18px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 2. Before & After Slider */
+        .comparison-section {
+            padding: 80px 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .comparison-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            aspect-ratio: 16/9;
+            user-select: none;
+        }
+
+        .img-comp-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .img-comp-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-label {
+            position: absolute;
+            top: 20px;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 20;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .label-before {
+            left: 20px;
+            background: rgba(255, 59, 48, 0.8);
+        }
+
+        .label-after {
+            right: 20px;
+            background: rgba(52, 199, 89, 0.8);
+        }
+
+        .comp-slider {
+            position: absolute;
+            z-index: 25;
+            cursor: ew-resize;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        .comp-slider::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 1000px;
+            background: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        /* 3. Physical Box Bundle */
+        .bundle-section {
+            padding: 100px 2rem;
+            background: linear-gradient(135deg, #fff 0%, #f0f4f8 100%);
+            overflow: hidden;
+        }
+
+        .bundle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .bundle-visual {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bundle-item {
+            position: absolute;
+            transition: all 0.5s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+        }
+
+        /* Adjust layering */
+        .bi-phone {
+            z-index: 3;
+            width: 140px;
+            transform: translate(-80px, 60px) rotate(-5deg);
+        }
+
+        .bi-tablet {
+            z-index: 2;
+            width: 280px;
+            transform: translate(40px, -20px) rotate(5deg);
+        }
+
+        .bi-map {
+            z-index: 4;
+            width: 100px;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+            transform: translate(120px, 100px) rotate(10deg);
+        }
+
+        .bundle-feature-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .check-circle {
+            width: 24px;
+            height: 24px;
+            background: #22c55e;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* 4. Industry Tabs */
+        .industry-section {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .industry-preview {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .ip-image {
+            height: 100%;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .ip-details {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Comprehensive Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                max-width: 600px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .digital-bundle-wrapper {
+                margin: 20px auto;
+                transform: scale(0.9);
+            }
+
+            .bundle-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .bundle-visual {
+                height: 400px;
+                order: -1;
+                /* Show visual first on mobile */
+            }
+
+            .industry-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .ip-image {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                /* Handled by JS toggle */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .search-container {
+                margin: 0 10px;
+                border-radius: 12px;
+            }
+
+            .search-results-area {
+                padding: 15px;
+            }
+
+            .business-list-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .business-list-item>div:last-child {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .comparison-container {
+                aspect-ratio: 1/1;
+                /* Square on mobile for better fit */
+                margin: 20px 0;
+            }
+
+            .comp-slider {
+                width: 30px;
+                height: 30px;
+            }
+
+            .bundle-section {
+                padding: 60px 1.5rem;
+            }
+
+            .bundle-visual {
+                transform: scale(0.85);
+                margin-top: -40px;
+                margin-bottom: -40px;
+            }
+
+            .bi-phone {
+                width: 100px;
+                transform: translate(-60px, 40px) rotate(-5deg);
+            }
+
+            .bi-tablet {
+                width: 220px;
+                transform: translate(10px, -10px) rotate(5deg);
+            }
+
+            .bi-map {
+                transform: translate(60px, 80px) rotate(10deg);
+            }
+
+            .tabs-nav {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scroll on iOS */
+            }
+
+            .tab-btn {
+                flex-shrink: 0;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .industry-section {
+                padding: 60px 1rem;
+            }
+
+            .ip-details {
+                padding: 25px;
+                text-align: center;
+            }
+
+            .service-features li {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .price-tag {
+                font-size: 1rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .cta-btn {
+                font-size: 1rem !important;
+                padding: 1rem 1.5rem !important;
+            }
+
+            .digital-bundle-wrapper {
+                transform: scale(0.65);
+                margin: -50px auto;
+                /* Close gap caused by scaling */
+            }
+
+            .bundle-content h2 {
+                font-size: 2rem !important;
+            }
+
+            .package-price {
+                font-size: 2.5rem;
+            }
+
+            /* Adjust search sim for very small screens */
+            .search-bar {
+                padding: 10px;
+                gap: 8px;
+            }
+
+            .search-input-mock {
+                height: 36px;
+                font-size: 14px;
+                padding: 0 12px;
+            }
+        }
+
+        /* Footer Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-container>div:nth-child(2) {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container>div:first-child h2 {
+                font-size: 2rem !important;
+            }
+
+            .footer-container>div:first-child {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container>div:nth-child(2) {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .footer-links a {
+                margin: 0 10px;
+            }
+        }
+
+        /* Comparison Slider Responsive Tweaks */
+        @media (max-width: 768px) {
+            .comparison-section {
+                padding: 60px 1rem;
+            }
+
+            .comparison-container {
+                width: 100%;
+                margin: 20px auto;
+                aspect-ratio: 1/1;
+                /* Square on mobile for better visibility */
+            }
+
+            .img-label {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+                top: 10px;
+            }
+
+            .label-before {
+                left: 10px;
+            }
+
+            .label-after {
+                right: 10px;
+            }
+        }
+
+        /* --- END NEW SECTIONS STYLING --- */
+
+        /* Modern Process Section Styles */
+        .process-section {
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .process-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .process-header p {
+            font-size: 1.1rem;
+            color: #64748b;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        /* Desktop Connecting Line */
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: #cbd5e1;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .step-card {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .step-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f1f5f9;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .step-card:hover .step-icon {
+            transform: scale(1.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-card h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .step-card {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .step-icon-wrapper {
+                margin: 0;
+                width: 70px;
+                height: 70px;
+                flex-shrink: 0;
+            }
+
+            .step-icon {
+                font-size: 1.5rem;
+            }
+
+            .step-number {
+                width: 25px;
+                height: 25px;
+                font-size: 0.75rem;
+            }
+
+            .step-content {
+                flex-grow: 1;
+            }
+
+            .step-card h3 {
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <header>
-    <nav role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="logo">
-                Shanas <span class="logo-accent">Digital</span>
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Shanas Digital" style="height: 60px; margin-right: 5px;">
+                    Shanas <span class="logo-accent">Digital</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <a href="#contact" class="cta-btn">Get Started</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#process">How It Works</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-btn">Get Started</a>
-        </div>
-    </nav>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <main>
-    <section class="hero" role="banner" aria-label="Get your business online">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>
-                    Get Your Business <span class="highlight">Online</span> in Just ½ Day
-                </h1>
-                <p>
-                    Professional website + Google Business Profile setup for businesses. 
-                    No hidden costs. No technical hassle. Just results.
-                </p>
-                <div class="hero-cta">
-                    <span class="price-tag">
-                        <span>Only ₹5,000</span>
-                    </span>
-                    <a href="#contact" class="cta-btn" style="padding: 1rem 2rem; font-size: 1.1rem;">
-                        Start Your Digital Journey →
-                    </a>
+        <section class="hero" role="banner" aria-label="Get your business online">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>
+                        Get Your Business <span class="highlight">Online</span> in Just ½ Day
+                    </h1>
+                    <p>
+                        Professional website + Google Business Profile setup for businesses.
+                        No hidden costs. No technical hassle. Just results.
+                    </p>
+                    <div class="hero-cta">
+                        <span class="price-tag">
+                            <span>Only ₹5,000</span>
+                        </span>
+                        <a href="#contact" class="cta-btn" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                            Start Your Digital Journey →
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="mockup-container">
-                    <div class="browser-mockup" role="img" aria-label="Website mockup preview">
-                        <div class="browser-header">
-                            <div class="browser-dot"></div>
-                            <div class="browser-dot"></div>
-                            <div class="browser-dot"></div>
+                <div class="hero-visual">
+                    <div class="digital-bundle-wrapper">
+                        <!-- Floating Icons -->
+                        <div class="float-icon icon-1"><i class="fas fa-bolt"></i></div>
+                        <div class="float-icon icon-2"><i class="fas fa-search-location"></i></div>
+
+                        <!-- Laptop Layer -->
+                        <div class="laptop-base">
+                            <div class="laptop-screen" style="background: white; overflow: hidden; position: relative;">
+                                <div class="screen-header"
+                                    style="background: #f1f5f9; border-bottom: 1px solid #e2e8f0;">
+                                    <div class="screen-dot red"></div>
+                                    <div class="screen-dot yellow"></div>
+                                    <div class="screen-dot green"></div>
+                                    <div
+                                        style="margin-left:auto; background:white; padding:2px 8px; border-radius:4px; font-size:8px; color:#64748b;">
+                                        shanasdigital.com</div>
+                                </div>
+                                <!-- Website Mockup -->
+                                <div class="mock-website"
+                                    style="padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+                                    <!-- Mock Nav -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div
+                                            style="font-weight: 800; color: var(--secondary); font-size: 10px;font-family: 'Aladin', cursive;">
+                                            Shanas
+                                            <span style="color:var(--primary);">Digital</span>
+                                        </div>
+                                        <div style="display: flex; gap: 4px;">
+                                            <div
+                                                style="width: 20px; height: 4px; background: #cbd5e1; border-radius: 2px;">
+                                            </div>
+                                            <div
+                                                style="width: 20px; height: 4px; background: #cbd5e1; border-radius: 2px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Mock Hero -->
+                                    <div
+                                        style="background: var(--light); border-radius: 6px; padding: 15px 10px; text-align: left; display: flex; align-items: center; gap: 8px;">
+                                        <div style="flex: 1;">
+                                            <div
+                                                style="width: 70%; height: 8px; background: var(--secondary); border-radius: 4px; margin-bottom: 6px;">
+                                            </div>
+                                            <div
+                                                style="width: 50%; height: 6px; background: #94a3b8; border-radius: 3px; margin-bottom: 8px;">
+                                            </div>
+                                            <div
+                                                style="width: 60px; height: 16px; background: var(--primary); border-radius: 20px;">
+                                            </div>
+                                        </div>
+                                        <div
+                                            style="width: 40px; height: 40px; background: #e2e8f0; border-radius: 50%; display: grid; place-items: center; font-size: 16px;">
+                                            🚀</div>
+                                    </div>
+                                    <!-- Mock Grid -->
+                                    <div class="sk-grid" style="grid-template-columns: repeat(3, 1fr); gap: 4px;">
+                                        <div class="sk-col"
+                                            style="height: 30px; background: #f8fafc; border: 1px solid #e2e8f0;"></div>
+                                        <div class="sk-col"
+                                            style="height: 30px; background: #f8fafc; border: 1px solid #e2e8f0;"></div>
+                                        <div class="sk-col"
+                                            style="height: 30px; background: #f8fafc; border: 1px solid #e2e8f0;"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="browser-content">
-                            <h2>Your Business Website</h2>
-                            <p>Beautiful • Fast • Mobile-Ready</p>
+
+                        <!-- Google Business Card Layer -->
+                        <div class="google-card">
+                            <div class="g-header">
+                                <div>
+                                    <div class="g-title">Shanas Digital Agency</div>
+                                    <div class="g-stars" style="color:#FBC02D;">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                        <span style="color:#5f6368; font-size:11px; margin-left:4px;">(5.0)</span>
+                                    </div>
+                                    <div style="font-size:11px; color:#5f6368; margin-top:2px;">Marketing agency in
+                                        Tamil Nadu</div>
+                                </div>
+                                <div class="g-avatar"
+                                    style="background:var(--secondary); color:white; display:grid; place-items:center; font-weight:bold; font-size:14px;">
+                                    SDA</div>
+                            </div>
+                            <div class="g-subtitle" style="margin-top:10px;">
+                                <i class="fas fa-map-marker-alt" style="color:#EA4335; margin-right:6px;"></i>
+                                <span style="font-size:12px;">Vayalur Rd, Trichy</span>
+                            </div>
+                            <div class="g-stats">
+                                <div class="g-stat"><i class="fas fa-chart-line" style="color:#1a73e8;"></i> +340%
+                                    Traffic</div>
+                                <div class="g-stat"><i class="fas fa-phone-alt" style="color:#34a853;"></i> Daily Calls
+                                </div>
+                            </div>
+                            <div class="g-actions" style="margin-top:12px;">
+                                <div class="g-btn" style="background:#f1f3f4; color:#1a73e8;"><i
+                                        class="fas fa-phone-alt"></i> Call Now</div>
+                                <div class="g-btn" style="background:#f1f3f4; color:#1a73e8;"><i
+                                        class="fas fa-globe"></i> Website</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number">½</span>
-                <span class="stat-label">Day Delivery</span>
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">½</span>
+                    <span class="stat-label">Day Delivery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">₹5K</span>
+                    <span class="stat-label">All-Inclusive Price</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Mobile Responsive</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label">Cloud Hosting</span>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">₹5K</span>
-                <span class="stat-label">All-Inclusive Price</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Mobile Responsive</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">Free</span>
-                <span class="stat-label">Cloud Hosting</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services" aria-labelledby="services-heading">
-        <div class="section-header">
-            <h2 id="services-heading">Everything Your Business Needs to Get Online</h2>
-            <p>Complete digital presence package - no hidden costs, no complications</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🌐</div>
-                <h3>Professional Website</h3>
-                <p>One-page business website with all essential sections</p>
-                <ul class="service-features">
-                    <li>About Your Business</li>
-                    <li>Services/Products Display</li>
-                    <li>Photo Gallery</li>
-                    <li>Location Map</li>
-                    <li>Contact Information</li>
-                    <li>Mobile-Optimized Design</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📍</div>
-                <h3>Google Business Profile</h3>
-                <p>Get found on Google Maps and Search</p>
-                <ul class="service-features">
-                    <li>Profile Setup & Verification</li>
-                    <li>Business Information Optimization</li>
-                    <li>Category & Keywords Setup</li>
-                    <li>Photos & Description</li>
-                    <li>Appear in Local Searches</li>
-                    <li>Get More Calls & Directions</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>One-Click Contact System</h3>
-                <p>Make it easy for customers to reach you</p>
-                <ul class="service-features">
-                    <li>Click-to-Call Button</li>
-                    <li>WhatsApp Chat Button</li>
-                    <li>Simple Enquiry Form</li>
-                    <li>Email Integration</li>
-                    <li>Social Media Links</li>
-                    <li>Mobile-Friendly Buttons</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">☁️</div>
-                <h3>Free Cloud Hosting</h3>
-                <p>Fast, secure, and reliable hosting included</p>
-                <ul class="service-features">
-                    <li>Free Hosting Forever</li>
-                    <li>Lightning-Fast Loading</li>
-                    <li>Secure (HTTPS)</li>
-                    <li>99.9% Uptime</li>
-                    <li>No Yearly Renewal Fees</li>
-                    <li>Regular Backups</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Package Section -->
-    <section class="package">
-        <div class="package-container">
-            <h2>Complete Digital Presence Package</h2>
-            <p>Everything you need to get your business online and attracting customers</p>
-            
-            <div class="package-price">
-                <small>Only</small> ₹5,000
-            </div>
-
-            <div class="package-includes">
-                <h3>What's Included:</h3>
-                <ul class="package-list">
-                    <li>Professional One-Page Website</li>
-                    <li>Google Business Profile Setup</li>
-                    <li>Call & WhatsApp Buttons</li>
-                    <li>Contact Form Integration</li>
-                    <li>Photo Gallery Section</li>
-                    <li>Google Maps Integration</li>
-                    <li>Mobile-Responsive Design</li>
-                    <li>Free Cloud Hosting (Lifetime)</li>
-                    <li>HTTPS Security Certificate</li>
-                    <li>½ Day Delivery Time</li>
-                </ul>
-            </div>
-
-            <a href="#contact" class="cta-btn" style="background: white; color: var(--primary); padding: 1.25rem 3rem; font-size: 1.25rem;">
-                Get Started Now →
-            </a>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio" aria-labelledby="portfolio-heading">
-        <div class="portfolio-container">
+        <!-- 1. Google Search Simulation -->
+        <section class="search-sim-section">
             <div class="section-header">
-                <h2 id="portfolio-heading">Recent Work</h2>
-                <p>See how we've helped businesses establish their digital presence</p>
+                <h2>Be The First Choice on Google</h2>
+                <p>Don't let customers miss you. When they search, they find YOU.</p>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image-wrapper">
-                        <span class="portfolio-badge">Live Project</span>
-                        <img src="images/testimonials/jayam_foods.png" alt="Jayam Foods Website Screenshot" class="portfolio-image">
+            <div class="search-container">
+                <div class="search-bar">
+                    <img src="images/google-logo.svg" height="24" alt="Google">
+                    <div class="search-input-mock">
+                        <span class="typing-text">Best business in Trichy</span>
                     </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span class="portfolio-tag">Food & Beverage</span>
-                            <span class="portfolio-tag">E-commerce</span>
-                        </div>
-                        <h3>Jayam Foods</h3>
-                        <p>Premium snacks and catering service in Trichy. Complete website with product showcase, contact system, and Google Business Profile integration.</p>
-                        <a href="https://jayam-foods.netlify.app/" target="_blank" class="portfolio-link" rel="noopener">
-                            View Live Website
-                        </a>
-                    </div>
+                    <i class="fas fa-search" style="color:#4285f4; font-size: 20px;"></i>
                 </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image-wrapper" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <span class="portfolio-badge">Coming Soon</span>
-                        <div class="portfolio-placeholder">
-                            Your Business<br>Could Be Next
+                <div class="search-results-area">
+                    <div class="map-pack-mock">
+                        <div class="map-header">Businesses near Trichy</div>
+                        <!-- Competitor 1 -->
+                        <div class="business-list-item" style="opacity: 0.6;">
+                            <div>
+                                <div class="biz-name">Old Shop Store</div>
+                                <div class="biz-rating">★★☆☆☆ (3)</div>
+                                <div class="biz-meta">Closed • 5.0 km away</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span class="portfolio-tag">Any Industry</span>
-                            <span class="portfolio-tag">Custom Design</span>
+                        <!-- USER BUSINESS -->
+                        <div class="business-list-item my-business-highlight">
+                            <div>
+                                <div class="biz-name">Your Business Name</div>
+                                <div class="biz-rating">★★★★★ (42)</div>
+                                <div class="biz-meta" style="color:#137333;">Open • Closes 9PM</div>
+                                <div style="font-size:12px; color:#555; margin-top:4px;">✓ Website Available</div>
+                            </div>
+                            <div style="text-align:right;">
+                                <a href="#" class="call-btn-mock"><i class="fas fa-phone-alt"></i> Call</a>
+                                <div style="margin-top:5px; font-size:12px; color:#1a73e8; font-weight:600;"><i
+                                        class="fas fa-directions"></i> 2 min</div>
+                            </div>
                         </div>
-                        <h3>Ready to Showcase Your Business?</h3>
-                        <p>Join the growing list of businesses we've helped establish a strong digital presence and attract more customers online.</p>
-                        <a href="#contact" class="portfolio-link">
-                            Get Started Today
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="portfolio-image-wrapper" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
-                        <span class="portfolio-badge">Special Offer</span>
-                        <div class="portfolio-placeholder">
-                            First 5 Clients<br>₹3,500 Only
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-meta">
-                            <span class="portfolio-tag">Limited Time</span>
-                            <span class="portfolio-tag">30% Off</span>
-                        </div>
-                        <h3>Launch Offer for Early Adopters</h3>
-                        <p>Be among our first clients and get a professional website + Google Business setup at a discounted rate. Includes testimonial feature.</p>
-                        <a href="#contact" class="portfolio-link">
-                            Claim Your Spot
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process" id="process" aria-labelledby="process-heading">
-        <div class="section-header">
-            <h2 id="process-heading">Simple 4-Step Process</h2>
-            <p>From inquiry to launch in just half a day</p>
-        </div>
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-number">1</div>
-                <h3>Share Your Details</h3>
-                <p>Fill our simple form or call us. Share your business info, photos, and contact details.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">2</div>
-                <h3>We Build Your Site</h3>
-                <p>Our team creates your professional website and sets up your Google Business Profile.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">3</div>
-                <h3>Review & Approve</h3>
-                <p>Check your website, request any changes. We refine until you're 100% satisfied.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-number">4</div>
-                <h3>Go Live!</h3>
-                <p>Your website goes live and you start appearing on Google Maps. Payment after delivery.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 id="contact-heading">Ready to Get Started?</h2>
-                <p>Let's bring your business online today. Contact us now for a quick consultation.</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <strong>Call or WhatsApp</strong><br>
-                            <a href="tel:+919360632805">+91 93606 32805</a>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <strong>Location</strong><br>
-                            No.1/352b, Ambethkar Colony, Vayalur Rd, Somarasampettai, Tiruchirappalli, Tamil Nadu 620102
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">⏰</div>
-                        <div>
-                            <strong>Business Hours</strong><br>
-                            Mon-Sat: 9 AM - 8 PM
+                        <!-- Competitor 2 -->
+                        <div class="business-list-item" style="opacity: 0.6;">
+                            <div>
+                                <div class="biz-name">Random Service</div>
+                                <div class="biz-rating">★★★☆☆ (12)</div>
+                                <div class="biz-meta">Open • 12.0 km away</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="contact-form">
-                <h3>Quick Enquiry Form</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label>Your Name *</label>
-                        <input type="text" name="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label>Business Name *</label>
-                        <input type="text" name="business" required placeholder="Your business name">
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX">
-                    </div>
-                    <div class="form-group">
-                        <label>Business Type</label>
-                        <input type="text" name="type" placeholder="e.g., Restaurant, Salon, Clinic">
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" placeholder="Any specific requirements or questions?"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Send Enquiry
-                    </button>
-                </form>
-                
-                <div class="form-divider">
-                    <span>OR</span>
+        <!-- 2. Before & After Slider -->
+        <section class="comparison-section">
+            <div class="section-header" style="color:white;">
+                <h2>See The Transformation</h2>
+                <p style="color:rgba(255,255,255,0.7);">Drag the slider to see how we transform your business</p>
+            </div>
+            <div class="comparison-container" id="compare-slider">
+                <div class="img-comp-img">
+                    <img src="images/comparison-after.jpg" alt="After: Online Presence">
+                    <div class="img-label label-after">After: Online & Growing</div>
                 </div>
-                
-                <div class="google-form-section">
-                    <div class="google-form-icon">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <h4>Prefer Google Forms?</h4>
-                    <p>Fill out our detailed questionnaire to help us understand your business better</p>
-                    <a href="https://forms.gle/soKikbMTNjvWGocj8" target="_blank" rel="noopener" class="google-form-btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Open Google Form
+                <div class="img-comp-img img-comp-overlay">
+                    <img src="images/comparison-before.jpg" style="filter: grayscale(100%) blur(4px);"
+                        alt="Before: Invisible">
+                    <div class="img-label label-before">Before: Invisible</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Physical Box Bundle (Replaces old Services Grid text-heavy section) -->
+        <!-- 3. Physical Box Bundle (Replaces old Services Grid text-heavy section) -->
+        <section class="bundle-section" id="services">
+            <div class="bundle-grid">
+                <div class="bundle-content">
+                    <span
+                        style="color:var(--primary); font-weight:800; letter-spacing:1px; text-transform:uppercase; font-size: 0.9rem;">
+                        <i class="fas fa-box-open"></i> The Complete Business Starter Kit
+                    </span>
+                    <h2
+                        style="font-size: 2.8rem; margin: 15px 0 20px; line-height: 1.2; color:var(--secondary); font-family: 'Clash Display', sans-serif;">
+                        Everything You Need.<br>One Fixed Price.
+                    </h2>
+                    <p style="font-size: 1.2rem; color:var(--text); margin-bottom: 30px; line-height: 1.6;">
+                        Why pay for a website, hosting, and SEO separately? We've bundled everything into one premium
+                        package used by successful Trichy businesses.
+                    </p>
+                    <ul class="bundle-feature-list" style="list-style:none;">
+                        <li>
+                            <div class="check-circle">✓</div>
+                            <div><strong>Premium Mobile Website</strong> <span
+                                    style="font-size:0.85em; color:#64748b;">(₹12,000 Value)</span></div>
+                        </li>
+                        <li>
+                            <div class="check-circle">✓</div>
+                            <div><strong>Google Map Ranking</strong> <span
+                                    style="font-size:0.85em; color:#64748b;">(Gets Local Calls)</span></div>
+                        </li>
+                        <li>
+                            <div class="check-circle">✓</div>
+                            <div><strong>WhatsApp & Call Buttons</strong> <span
+                                    style="font-size:0.85em; color:#64748b;">(Direct Leads)</span></div>
+                        </li>
+                        <li>
+                            <div class="check-circle">✓</div>
+                            <div><strong>FREE Lifetime Hosting</strong> <span
+                                    style="font-size:0.85em; color:#64748b;">(Save ₹3,000/yr)</span></div>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="cta-btn"
+                        style="margin-top:30px; box-shadow: 0 10px 30px rgba(255, 90, 31, 0.3);">
+                        Get Your Kit for ₹5,000 →
                     </a>
                 </div>
+                <div class="bundle-visual" style="perspective: 1000px;">
+                    <!-- Price Tag Overlay -->
+                    <div
+                        style="position:absolute; top:20px; right:20px; background:var(--primary); color:white; padding:15px 25px; border-radius:50px; font-weight:800; font-size:1.5rem; z-index:10; box-shadow:0 10px 20px rgba(255,90,31,0.4); transform: rotate(10deg);">
+                        ₹5,000 <span style="font-size:0.8rem; display:block; font-weight:500; text-align:center;">All
+                            Inclusive</span>
+                    </div>
+
+                    <!-- Abstract representations using CSS/Images -->
+                    <img src="images/bundle-phone.jpg" class="bundle-item bi-phone" alt="Mobile Site"
+                        style="border: 8px solid #333; border-radius: 20px;">
+                    <img src="images/bundle-tablet.jpg" class="bundle-item bi-tablet" alt="Website on Tablet"
+                        style="border: 12px solid #333; border-radius: 12px;">
+                    <div class="bundle-item bi-map" style="box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+                        <i class="fas fa-map-marker-alt"
+                            style="color:#EA4335; font-size:3.5rem; display:block; text-align:center; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));"></i>
+                        <div
+                            style="font-weight:700; text-align:center; font-size:0.9rem; color:#333; margin-top:10px; background: white; padding: 4px 12px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            #1 Rank</div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 4. Industry Specific Tabs -->
+        <section class="industry-section">
+            <div class="section-header">
+                <h2>Perfect For Your Industry</h2>
+                <p>Tailored designs that fit your specific business needs</p>
+            </div>
+
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="openTab('restaurant')">Restaurant & Cafe</button>
+                <button class="tab-btn" onclick="openTab('retail')">Retail Shop</button>
+                <button class="tab-btn" onclick="openTab('service')">Home Services</button>
+                <button class="tab-btn" onclick="openTab('health')">Clinic & Health</button>
+            </div>
+
+            <div id="restaurant" class="tab-content active">
+                <div class="industry-preview">
+                    <div class="ip-image" style="background-image: url('images/industry-restaurant.jpg');">
+                    </div>
+                    <div class="ip-details">
+                        <h3>For Restaurants</h3>
+                        <ul class="service-features" style="margin:20px 0;">
+                            <li>Digital Menu Card</li>
+                            <li>Table Booking Form</li>
+                            <li>Food Photo Gallery</li>
+                            <li>Location & Hours</li>
+                        </ul>
+                        <a href="#contact" class="portfolio-link">Start Restaurant Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="retail" class="tab-content">
+                <div class="industry-preview">
+                    <div class="ip-image" style="background-image: url('images/industry-retail.jpg');">
+                    </div>
+                    <div class="ip-details">
+                        <h3>For Retail Shops</h3>
+                        <ul class="service-features" style="margin:20px 0;">
+                            <li>Product Showcase</li>
+                            <li>New Arrival Updates</li>
+                            <li>Offer Banners</li>
+                            <li>WhatsApp Ordering</li>
+                        </ul>
+                        <a href="#contact" class="portfolio-link">Start Retail Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="service" class="tab-content">
+                <div class="industry-preview">
+                    <div class="ip-image" style="background-image: url('images/industry-service.jpg');">
+                    </div>
+                    <div class="ip-details">
+                        <h3>For Electricians/Plumbers</h3>
+                        <ul class="service-features" style="margin:20px 0;">
+                            <li>Service List</li>
+                            <li>Emergency Call Button</li>
+                            <li>Area Covered Map</li>
+                            <li>Customer Testimonials</li>
+                        </ul>
+                        <a href="#contact" class="portfolio-link">Start Service Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="health" class="tab-content">
+                <div class="industry-preview">
+                    <div class="ip-image" style="background-image: url('images/industry-health.jpg');">
+                    </div>
+                    <div class="ip-details">
+                        <h3>For Clinics</h3>
+                        <ul class="service-features" style="margin:20px 0;">
+                            <li>Appointment Booking</li>
+                            <li>Doctor Profiles</li>
+                            <li>Treatment Services</li>
+                            <li>Emergency Contact</li>
+                        </ul>
+                        <a href="#contact" class="portfolio-link">Start Clinic Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Package Section -->
+        <!-- Modern Package Section -->
+        <section class="package-modern-section" style="padding: 100px 0; background: #fff;">
+            <div class="package-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div class="section-header" style="margin-bottom: 60px;">
+                    <h2 style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px;">What You Get Inside the
+                        Box</h2>
+                    <p style="color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        We don't just build websites; we build your entire online business presence.
+                    </p>
+                </div>
+
+                <div class="package-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                    <!-- Card 1: Website -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:var(--primary); border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Premium Business
+                            Website</h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            A stunning, mobile-responsive one-page website that showcases your services, photos, and
+                            reviews professionally.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Google Profile -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:#4285F4; border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Google Map Ranking
+                        </h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            We set up and optimize your Google Business Profile so local customers find you first on
+                            Maps.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Lead Gen -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:#25D366; border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Direct Lead System
+                        </h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            One-click Call and WhatsApp buttons fixed on your site so customers can reach you instantly.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: Hosting -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:#0F172A; border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Hosting for Life</h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            Forget monthly bills. We host your website on secure, high-speed servers for free, forever.
+                        </p>
+                    </div>
+
+                    <!-- Card 5: SEO -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:#F59E0B; border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Basic SEO Setup</h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            We write proper titles, descriptions, and keywords so Google understands exactly what you
+                            sell.
+                        </p>
+                    </div>
+
+                    <!-- Card 6: Support -->
+                    <div class="pkg-card"
+                        style="background:var(--light); padding:30px; border-radius:20px; text-align:left; transition:transform 0.3s; border:1px solid #e2e8f0;">
+                        <div
+                            style="width:50px; height:50px; background:#EC4899; border-radius:12px; display:grid; place-items:center; color:white; font-size:24px; margin-bottom:20px;">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 style="font-size:1.3rem; margin-bottom:10px; color:var(--secondary);">Tech Support</h3>
+                        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.6;">
+                            Need to change a phone number or photo later? Just message us. We've got your back.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Final Value Stack -->
+                <div
+                    style="margin-top: 60px; text-align: center; background: var(--secondary); padding: 40px; border-radius: 20px; color: white;">
+                    <h3 style="margin-bottom: 30px; opacity: 0.9;">Stop Overpaying Agencies</h3>
+                    <div
+                        style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-bottom: 40px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.6;">₹15,000</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Market Price</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.6;">₹3,000/yr</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Hosting Fees</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 1.5rem; text-decoration: line-through; opacity: 0.6;">₹5,000</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">SEO Setup</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta" style="justify-content:center; gap:20px; flex-wrap: wrap;">
+                        <div
+                            style="background: white; color: var(--secondary); display: inline-block; padding: 20px 40px; border-radius: 50px;">
+                            <div
+                                style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                You Pay Only</div>
+                            <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">₹5,000</div>
+                            <div style="font-size: 0.8rem; margin-top: 5px;">One Time Payment</div>
+                        </div>
+                        <a href="#contact" class="cta-btn"
+                            style="background: var(--primary); color: white; padding: 1.5rem 3rem; font-size: 1.25rem; align-self: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            Start Now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .pkg-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                    background: white !important;
+                }
+            </style>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio" aria-labelledby="portfolio-heading">
+            <div class="portfolio-container">
+                <div class="section-header">
+                    <h2 id="portfolio-heading">Recent Work</h2>
+                    <p>See how we've helped businesses establish their digital presence</p>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- RAA Decors -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-badge">Live Project</span>
+                            <img src="images/testimonials/raadecors.png" alt="RAA Decors Website"
+                                class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag">Interior Decor</span>
+                                <span class="portfolio-tag">E-commerce</span>
+                            </div>
+                            <h3>RAA Decors</h3>
+                            <p>E-commerce & Interior Design Showcase. A modern, elegant online store for premium
+                                furniture and home decor.</p>
+                            <a href="https://www.raadecors.com/" target="_blank" class="portfolio-link" rel="noopener">
+                                View Live Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Jayam Foods -->
+                    <div class="portfolio-card">
+                        <div class="portfolio-image-wrapper">
+                            <span class="portfolio-badge">Live Project</span>
+                            <img src="images/testimonials/jayam_foods.png" alt="Jayam Foods Website Screenshot"
+                                class="portfolio-image">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag">Food & Beverage</span>
+                                <span class="portfolio-tag">E-commerce</span>
+                            </div>
+                            <h3>Jayam Foods</h3>
+                            <p>Premium snacks and catering service in Trichy. Complete website with product showcase,
+                                contact system, and Google Business Profile integration.</p>
+                            <a href="https://jayam-foods.netlify.app/" target="_blank" class="portfolio-link"
+                                rel="noopener">
+                                View Live Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-image-wrapper"
+                            style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span class="portfolio-badge">Coming Soon</span>
+                            <div class="portfolio-placeholder">
+                                Your Business<br>Could Be Next
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag">Any Industry</span>
+                                <span class="portfolio-tag">Custom Design</span>
+                            </div>
+                            <h3>Ready to Showcase Your Business?</h3>
+                            <p>Join the growing list of businesses we've helped establish a strong digital presence and
+                                attract more customers online.</p>
+                            <a href="#contact" class="portfolio-link">
+                                Get Started Today
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <div class="portfolio-image-wrapper"
+                            style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                            <span class="portfolio-badge">Special Offer</span>
+                            <div class="portfolio-placeholder">
+                                First 5 Clients<br>₹3,500 Only
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="portfolio-meta">
+                                <span class="portfolio-tag">Limited Time</span>
+                                <span class="portfolio-tag">30% Off</span>
+                            </div>
+                            <h3>Launch Offer for Early Adopters</h3>
+                            <p>Be among our first clients and get a professional website + Google Business setup at a
+                                discounted rate. Includes testimonial feature.</p>
+                            <a href="#contact" class="portfolio-link">
+                                Claim Your Spot
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section" id="process" aria-labelledby="process-heading">
+            <div class="process-container">
+                <div class="process-header">
+                    <h2 id="process-heading">Simple 4-Step Process 🚀</h2>
+                    <p>From inquiry to launch in just half a day</p>
+                </div>
+
+                <div class="steps-grid">
+                    <!-- Step 1: Share Details -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <div class="step-number">01</div>
+                            <i class="fas fa-clipboard-list step-icon"></i>
+                        </div>
+                        <h3>Share Details</h3>
+                        <p>Fill our simple form or call us. Share your business info, photos, and contact details.</p>
+                    </div>
+
+                    <!-- Step 2: We Build -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <div class="step-number">02</div>
+                            <i class="fas fa-laptop-code step-icon"></i>
+                        </div>
+                        <h3>We Build</h3>
+                        <p>Our team creates your professional website and sets up your Google Business Profile.</p>
+                    </div>
+
+                    <!-- Step 3: Review -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <div class="step-number">03</div>
+                            <i class="fas fa-check-double step-icon"></i>
+                        </div>
+                        <h3>Review & Approve</h3>
+                        <p>Check your website, request any changes. We refine until you're 100% satisfied.</p>
+                    </div>
+
+                    <!-- Step 4: Go Live -->
+                    <div class="step-card">
+                        <div class="step-icon-wrapper">
+                            <div class="step-number">04</div>
+                            <i class="fas fa-rocket step-icon"></i>
+                        </div>
+                        <h3>Go Live!</h3>
+                        <p>Your website goes live and you start appearing on Google Maps. Payment after delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 id="contact-heading">Ready to Get Started?</h2>
+                    <p>Let's bring your business online today. Contact us now for a quick consultation.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <strong>Call or WhatsApp</strong><br>
+                                <a href="tel:+919360632805">+91 93606 32805</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <strong>Location</strong><br>
+                                No.1/352b, Ambethkar Colony, Vayalur Rd, Somarasampettai, Tiruchirappalli, Tamil Nadu
+                                620102
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">⏰</div>
+                            <div>
+                                <strong>Business Hours</strong><br>
+                                Mon-Sat: 9 AM - 8 PM
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Quick Enquiry Form</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Business Name *</label>
+                            <input type="text" name="business" required placeholder="Your business name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number *</label>
+                            <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Business Type</label>
+                            <input type="text" name="type" placeholder="e.g., Restaurant, Salon, Clinic">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" placeholder="Any specific requirements or questions?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Enquiry
+                        </button>
+                    </form>
+
+                    <div class="form-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="google-form-section">
+                        <div class="google-form-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h4>Prefer Google Forms?</h4>
+                        <p>Fill out our detailed questionnaire to help us understand your business better</p>
+                        <a href="https://forms.gle/soKikbMTNjvWGocj8" target="_blank" rel="noopener"
+                            class="google-form-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Open Google Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer role="contentinfo">
-        <p><strong>Shanas Digital Agency</strong></p>
-        <p>Helping  businesses in Trichy establish their digital presence</p>
-        <p>© 2025 Shanas Digital Agency. All rights reserved.</p>
+    <!-- Modern Footer -->
+    <footer style="background: #0B1120; color: white; padding: 100px 0 0; position: relative; overflow: hidden;">
+        <!-- Background Gradient Orb -->
+        <div
+            style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(255, 90, 31, 0.15); border-radius: 50%; filter: blur(80px);">
+        </div>
+
+        <div class="footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Top CTA Section -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 60px; margin-bottom: 60px;">
+                <h2
+                    style="font-size: clamp(2.5rem, 5vw, 4rem); font-family: 'Clash Display', sans-serif; line-height: 1.1; margin: 0;">
+                    Ready to take your<br>
+                    <span style="color: var(--primary);">business online?</span>
+                </h2>
+                <a href="#contact" class="cta-btn"
+                    style="background: white; color: var(--secondary); padding: 1.5rem 3rem; font-size: 1.25rem; border-radius: 50px; font-weight: 700; transition: transform 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    Let's Talk Projects →
+                </a>
+            </div>
+
+            <!-- Footer Grid -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; padding-bottom: 60px;">
+                <!-- Brand Col -->
+                <div>
+                    <div
+                        style="font-family: 'Aladin', cursive; font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px;">
+                        <img src="images/logo.png" alt="Shanas Digital" style="height: 50px;">
+                        <div>Shanas <span style="color: var(--primary) !important;">Digital</span></div>
+                    </div>
+                    <p
+                        style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 300px; margin-bottom: 30px;text-align: left;">
+                        We help businesses grow with affordable, high-quality websites and digital marketing
+                        strategies.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://wa.me/919360632805" target="_blank"
+                            style="width: 45px; height: 45px; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; font-size: 1.2rem; transition: background 0.3s; display:grid; place-items:center;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/shanas_digitalagency/" target="_blank"
+                            style="width: 45px; height: 45px; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; font-size: 1.2rem; transition: background 0.3s; display:grid; place-items:center;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            style="width: 45px; height: 45px; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; font-size: 1.2rem; transition: background 0.3s; display:grid; place-items:center;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white; margin-bottom: 25px;text-align:left;">Company</h4>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;align-items: start;">
+                        <li><a href="#about"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">About Us</a></li>
+                        <li><a href="#portfolio"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Our Work</a></li>
+                        <li><a href="#process"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Process</a></li>
+                        <li><a href="#services"
+                                style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white; margin-bottom: 25px;text-align:left;">Services</h4>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;align-items: start;">
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Web
+                                Design</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Google
+                                Business</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">SEO
+                                Optimization</a></li>
+                        <li><a href="#" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;">Digital
+                                Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 style="font-size: 1.1rem; color: white; margin-bottom: 25px; text-align:left;">Contact</h4>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
+
+                        <li style="color: #94a3b8; display: flex; gap: 15px; align-items: center;">
+                            <i class="fas fa-phone-alt" style="color: var(--primary);"></i>
+                            <a href="tel:+919360632805" style="color: #94a3b8; text-decoration: none;">+91 93606
+                                32805</a>
+                        </li>
+                        <li style="color: #94a3b8; display: flex; gap: 15px; align-items: center;">
+                            <i class="fas fa-envelope" style="color: var(--primary);"></i>
+                            <a href="mailto:shanas.signature130@gmail.com"
+                                style="color: #94a3b8; text-decoration: none;">shanas.signature130@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding: 30px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; color: #64748b; font-size: 0.9rem;">
+                <div>©
+                    <script>document.write(new Date().getFullYear())</script> <span
+                        style="font-family: 'Aladin', cursive;">Shanas Digital Agency.</span> All rights
+                    reserved.
+                </div>
+                <div style="display: flex; gap: 30px;">
+                    <a href="privacy-policy.html" style="color: #64748b; text-decoration: none;">Privacy Policy</a>
+                    <a href="terms-of-service.html" style="color: #64748b; text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsive Tweaks for Footer -->
+        <style>
+            @media (max-width: 992px) {
+                .footer-container>div:nth-child(2) {
+                    /* The Grid */
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .footer-container>div:nth-child(2) {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer-container>div:first-child {
+                    /* Top CTA */
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
     </footer>
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
-        <a href="https://wa.me/919360632805?text=Hi%20Shanas%20Digital!%20I'm%20interested%20in%20getting%20a%20website%20for%20my%20business." 
-           class="float-btn whatsapp-btn" 
-           target="_blank"
-           aria-label="WhatsApp"
-           title="Chat on WhatsApp">
+        <a href="https://wa.me/919360632805?text=Hi%20Shanas%20Digital!%20I'm%20interested%20in%20getting%20a%20website%20for%20my%20business."
+            class="float-btn whatsapp-btn" target="_blank" aria-label="WhatsApp" title="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:+919360632805" 
-           class="float-btn call-btn" 
-           aria-label="Call"
-           title="Call Us Now">
+        <a href="tel:+919360632805" class="float-btn call-btn" aria-label="Call" title="Call Us Now">
             <i class="fas fa-phone-alt"></i>
         </a>
     </div>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <!-- Toastr JS for modern notifications -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // Configure Toastr options for modern notifications
+        // Define global functions BEFORE document.ready
+
+        // Tab Switching Logic
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            var tabs = document.getElementsByClassName("tab-btn");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+                x[i].classList.remove("active");
+            }
+
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            var target = document.getElementById(tabName);
+            if (target) {
+                target.style.display = "block";
+                // Small timeout to allow display:block to apply before opacity transition
+                setTimeout(function () {
+                    target.classList.add("active");
+                }, 10);
+            }
+
+            // Find button with onclick matching tabName and add active
+            var activeBtn = Array.from(tabs).find(btn => btn.getAttribute('onclick').includes(tabName));
+            if (activeBtn) activeBtn.classList.add("active");
+        }
+
+        // Responsive Image Comparison Slider Logic
+        function initComparisons() {
+            var x, i;
+            x = document.getElementsByClassName("img-comp-overlay");
+            for (i = 0; i < x.length; i++) {
+                compareImages(x[i]);
+            }
+            function compareImages(img) {
+                var slider, clicked = 0, w, h;
+
+                // Initialize with 50% width
+                img.style.width = "50%";
+
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "comp-slider");
+                slider.innerHTML = "<i class='fas fa-arrows-alt-h'></i>"; // Add icon
+                img.parentElement.insertBefore(slider, img);
+
+                // Center slider initially
+                slider.style.top = "50%";
+                slider.style.left = "50%";
+                slider.style.transform = "translate(-50%, -50%)";
+
+                slider.addEventListener("mousedown", slideReady);
+                window.addEventListener("mouseup", slideFinish);
+                slider.addEventListener("touchstart", slideReady);
+                window.addEventListener("touchend", slideFinish);
+
+                function slideReady(e) {
+                    e.preventDefault();
+                    clicked = 1;
+                    window.addEventListener("mousemove", slideMove);
+                    window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                    clicked = 0;
+                }
+                function slideMove(e) {
+                    var pos;
+                    if (clicked == 0) return false;
+
+                    // Recalculate width on every move to stay responsive
+                    w = img.parentElement.offsetWidth;
+
+                    pos = getCursorPos(e);
+                    if (pos < 0) pos = 0;
+                    if (pos > w) pos = w;
+                    slide(pos);
+                }
+                function getCursorPos(e) {
+                    var a, x = 0;
+                    e = (e.changedTouches) ? e.changedTouches[0] : e;
+                    a = img.parentElement.getBoundingClientRect();
+                    x = e.pageX - a.left;
+                    x = x - window.pageXOffset;
+                    return x;
+                }
+                function slide(x) {
+                    var percent = (x / w) * 100;
+                    img.style.width = percent + "%";
+                    slider.style.left = percent + "%";
+                }
+            }
+        }
+
+        // Main Document Ready
+        $(document).ready(function () {
+
+            // Initialize Slider
+            initComparisons();
+
+            // Configure Toastr options
             toastr.options = {
                 "closeButton": true,
-                "debug": false,
-                "newestOnTop": true,
                 "progressBar": true,
                 "positionClass": "toast-top-right",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
                 "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
             };
 
-            // Smooth scrolling for navigation links using jQuery
-            $('a[href^="#"]').on('click', function(e) {
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function (e) {
                 e.preventDefault();
-                
                 var target = $(this.getAttribute('href'));
-                
                 if (target.length) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
@@ -1774,10 +3544,9 @@
                 }
             });
 
-            // Form submission handler with jQuery and Toastr
-            $('#contactForm').on('submit', function(e) {
+            // Form submission
+            $('#contactForm').on('submit', function (e) {
                 e.preventDefault();
-                
                 var formData = {
                     name: $('input[name="name"]').val(),
                     business: $('input[name="business"]').val(),
@@ -1786,138 +3555,73 @@
                     message: $('textarea[name="message"]').val()
                 };
 
-                // Validate required fields
                 if (!formData.name || !formData.business || !formData.phone) {
                     toastr.error('Please fill in all required fields!', 'Validation Error');
                     return;
                 }
 
-                // Create WhatsApp message
                 var message = `New Website Enquiry!
-
                     Name: ${formData.name}
                     Business: ${formData.business}
                     Phone: ${formData.phone}
                     Type: ${formData.type || 'Not specified'}
                     Message: ${formData.message || 'No message'}`;
 
-                // Show success notification
                 toastr.success('Redirecting to WhatsApp...', 'Enquiry Sent!', {
                     timeOut: 2000,
-                    onHidden: function() {
-                        // Redirect to WhatsApp after toast hides
+                    onHidden: function () {
                         var whatsappUrl = `https://wa.me/919360632805?text=${encodeURIComponent(message)}`;
                         window.open(whatsappUrl, '_blank');
                     }
                 });
-
-                // Reset form
                 this.reset();
             });
 
-            // Add scroll animation to navbar with jQuery
-            var lastScroll = 0;
-            var $nav = $('nav');
 
-            $(window).on('scroll', function() {
-                var currentScroll = $(this).scrollTop();
-                
-                if (currentScroll > lastScroll && currentScroll > 100) {
-                    $nav.css('transform', 'translateY(-100%)');
-                } else {
-                    $nav.css('transform', 'translateY(0)');
-                }
-                
-                lastScroll = currentScroll;
-            });
 
-            // Portfolio card hover effects
+            // Portfolio Hover
             $('.portfolio-card').hover(
-                function() {
-                    $(this).find('.portfolio-badge').css({
-                        'transform': 'scale(1.05)',
-                        'transition': 'transform 0.3s'
-                    });
-                },
-                function() {
-                    $(this).find('.portfolio-badge').css('transform', 'scale(1)');
-                }
+                function () { $(this).find('.portfolio-badge').css({ 'transform': 'scale(1.05)' }); },
+                function () { $(this).find('.portfolio-badge').css('transform', 'scale(1)'); }
             );
 
-            // Stats counter animation using jQuery
+            // Stats Counter
             var counted = false;
-            
-            $(window).on('scroll', function() {
+            $(window).on('scroll', function () {
                 var statsSection = $('.stats');
-                
                 if (statsSection.length && !counted) {
                     var statsOffset = statsSection.offset().top;
                     var scrollTop = $(window).scrollTop();
                     var windowHeight = $(window).height();
-                    
+
                     if (scrollTop + windowHeight > statsOffset + 100) {
                         counted = true;
-                        
-                        // Animate stat numbers
-                        $('.stat-number').each(function() {
+                        $('.stat-number').each(function () {
                             var $this = $(this);
-                            var text = $this.text();
-                            
-                            $this.css('opacity', '0').animate(
-                                { opacity: 1 },
-                                800,
-                                function() {
-                                    $this.addClass('counted');
-                                }
-                            );
+                            $this.css('opacity', '0').animate({ opacity: 1 }, 800);
                         });
                     }
                 }
             });
 
-            // CTA button pulse animation
-            setInterval(function() {
-                $('.hero-cta .cta-btn').animate({
-                    boxShadow: '0 5px 25px rgba(255, 107, 53, 0.5)'
-                }, 500).animate({
-                    boxShadow: '0 5px 20px rgba(255, 107, 53, 0.3)'
-                }, 500);
-            }, 3000);
-
-            // Service cards stagger animation on scroll
+            // Service Cards Stagger
             var servicesAnimated = false;
-            
-            $(window).on('scroll', function() {
-                var $services = $('.services');
-                
+            $(window).on('scroll', function () {
+                var $services = $('.bundle-grid'); // Changed from .services to .bundle-grid
                 if ($services.length && !servicesAnimated) {
                     var servicesOffset = $services.offset().top;
                     var scrollTop = $(window).scrollTop();
                     var windowHeight = $(window).height();
-                    
-                    if (scrollTop + windowHeight > servicesOffset + 200) {
+
+                    if (scrollTop + windowHeight > servicesOffset + 100) {
                         servicesAnimated = true;
-                        
-                        $('.service-card').each(function(index) {
-                            var $card = $(this);
-                            
-                            setTimeout(function() {
-                                $card.css({
-                                    'opacity': '0',
-                                    'transform': 'translateY(30px)'
-                                }).animate(
-                                    { opacity: 1 },
-                                    600
-                                ).css({
-                                    'transform': 'translateY(0)',
-                                    'transition': 'transform 0.6s ease'
-                                });
-                            }, index * 150);
-                        });
+                        $('.bundle-content, .bundle-visual').css({ 'opacity': '0', 'transform': 'translateY(30px)' })
+                            .animate({ opacity: 1 }, 1000).css({ 'transform': 'translateY(0)' });
                     }
                 }
             });
         });
     </script>
 </body>
+
 </html>
